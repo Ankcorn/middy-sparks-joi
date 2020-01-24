@@ -3,8 +3,7 @@ Middy Sparks Joi is a middleware for `@middy/core`. It validates incoming reques
 
 ![https://media.giphy.com/media/uWzDsAsRm2X9qULHLs/giphy.gif](https://media.giphy.com/media/uWzDsAsRm2X9qULHLs/giphy.gif)
 
-
-## Quick Start
+## Getting Started
 First, run `yarn add middy-sparks-joi @hapi/joi` or `npm i middy-sparks-joi @hapi/joi` in your project directory. Then in your lambda handler:
 
 ```javascript
@@ -49,3 +48,7 @@ module.exports = {
 }
 ```
 That's it! Middy Sparks Joi protects you from inputs that don't spark joi ✨
+
+## Building Joi Schemas
+
+The docs for joi can be found here https://hapi.dev/family/joi/api/?v=17.1.0 this is 
