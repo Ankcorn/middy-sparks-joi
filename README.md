@@ -51,4 +51,4 @@ That's it! Middy Sparks Joi protects you from inputs that don't spark joi ✨
 
 ## Building Joi Schemas
 
-The docs for joi can be found here https://hapi.dev/family/joi/api/?v=17.1.0 this is 
+The docs for joi can be found here https://hapi.dev/family/joi/api/
