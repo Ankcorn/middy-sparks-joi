@@ -14,7 +14,19 @@ const middy = require('@middy/core')
 const jsonBodyParser = require('@middy/http-json-body-parser')
 const httpErrorHandler = require('@middy/http-error-handler')
 
+const Joi = require('@hapi/joi');
 const validator = require('middy-sparks-joi')
+
+const schema = Joi.object({
+    body: Joi.object({
+      creditCardNumber: Joi.string().creditcard(),
+      expiryMonth: Joi.date().required(),
+      expiryYear: Joi.date().required(),
+      cvc: Joi.number().integer().required(3),
+      nameOnCard: Joi.alphanum().required()
+      amount: Joi.number().required()
+    }).required()
+});
 
 const processPayment = (event, context, callback) => {
  // you don't need to validate the event, the schema you passed to middy-sparks-joi does that for you.
