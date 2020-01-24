@@ -10,12 +10,11 @@ First, run `yarn add middy-sparks-joi @hapi/joi` or `npm i middy-sparks-joi @hap
 ```javascript
 const middy = require('@middy/core')
 
-// These middlewares are recommended, first to parse the body
-// Then handle any errors correctly
+// These middlewares are recommended
 const jsonBodyParser = require('@middy/http-json-body-parser')
 const httpErrorHandler = require('@middy/http-error-handler')
 
-const validate = require('middy-sparks-joi')
+const validator = require('middy-sparks-joi')
 
 
 ```
