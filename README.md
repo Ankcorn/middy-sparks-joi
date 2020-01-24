@@ -16,6 +16,24 @@ const httpErrorHandler = require('@middy/http-error-handler')
 
 const validator = require('middy-sparks-joi')
 
+const processPayment = (event, context, callback) => {
+ // you don't need to validate the event, the schema you passed to middy-sparks-joi does that for you.
+ const { creditCardNumber, expiryMonth, expiryYear, cvc, nameOnCard, amount } = event.body
 
+ // do stuff with this data
+ // ...
+
+ return callback(null, { result: 'success', message: 'payment processed correctly'})
+}
+
+module.exports = {
+  handler: middy(processPayment)
+    .use(httpErrorHandler())
+    .use(jsonBodyParser())
+    .use(validator({
+      schema: ...,
+      options: {}
+    })
+}
 ```
-That's it! Middy Sparks Joi takes care of ensuring you recieve what you expect ✨
+That's it! Middy Sparks Joi protects you from inputs that don't spark joi ✨
