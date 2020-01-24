@@ -18,3 +18,4 @@ const validator = require('middy-sparks-joi')
 
 
 ```
+That's it! Middy Sparks Joi takes care of ensuring you recieve what you expect ✨
