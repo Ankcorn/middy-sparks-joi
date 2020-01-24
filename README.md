@@ -1,5 +1,5 @@
 # ✨Middy Sparks Joi
-Middy Sparks Joi is a middleware for `@middy/core`. It validates incoming requests, and if an item does not spark joi we thank it then throw an exception.
+Middy Sparks Joi is a middleware for `@middy/core`. It validates incoming requests, and if an item does not spark joi we thank it and throw an exception.
 
 ![https://media.giphy.com/media/uWzDsAsRm2X9qULHLs/giphy.gif](https://media.giphy.com/media/uWzDsAsRm2X9qULHLs/giphy.gif)
 
