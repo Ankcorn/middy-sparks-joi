@@ -6,6 +6,9 @@
   "author": "ThomasAnkcorn <thomasankcorn@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@middy/core": "^1.0.0-beta.2",
+    "@middy/http-error-handler": "^1.0.0-beta.2",
+    "@middy/http-json-body-parser": "^1.0.0-beta.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-jest": "^23.6.0",
