@@ -7,8 +7,5 @@ module.exports = ({ schema, options}) => {
     before(handler, next) {
       return next()
     },
-    after(handler, next) {
-      return next()
-    },
   }
 }
