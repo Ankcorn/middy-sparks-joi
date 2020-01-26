@@ -10,15 +10,13 @@ describe('Validator', () => {
 		)
 	})
 
-	it('If the input matches the schema then we get a 200 response', () => {
-		return new Promise(done => {
-			const schema = Joi.object({ body: Joi.string().required() })
-			const event = createEvent()
+	it('If the input matches the schema then we get a 200 response', done => { // eslint-disable-line
+		const schema = Joi.object({ body: Joi.string().required() })
+		const event = createEvent()
 
-			endpoint(event, data => {
-				expect(data).toBe(200)
-				done()
-			}).use(validator({ schema }))
-		})
+		endpoint(event, data => {
+			expect(data).toBe(200)
+			done()
+		}).use(validator({ schema }))
 	})
 })
