@@ -1,6 +1,6 @@
 {
   "name": "middy-sparks-joi",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "src/index.js",
   "repository": "git@github.com:Ankcorn/middy-sparks-joi.git",
   "author": "ThomasAnkcorn <thomasankcorn@gmail.com>",
