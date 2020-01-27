@@ -1,18 +1,9 @@
-const middy = require('@middy/core')
+const { promisify } = require('util')
 
-function endpoint() {
-	return middy(event => ({ body: JSON.stringify(event), statusCode: 200 }))
-}
-
-function createEvent(body, params, query) {
-	return {
-		body: JSON.stringify(body),
-		queryStringParameters: query,
-		pathParameters: params,
-	}
+function invoke(handler, event = {}, context = {}) {
+	return promisify(handler)(event, context)
 }
 
 module.exports = {
-	endpoint,
-	createEvent,
+	invoke,
 }

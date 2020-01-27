@@ -1,9 +1,7 @@
+const createError = require('http-errors')
 const Joi = require('@hapi/joi')
 
-const defaults = {}
 module.exports = ({ schema, options }) => {
-	const settings = { ...defaults, ...options }
-
 	if (!Joi.isSchema(schema)) {
 		console.log(
 			'[middy-sparks-joi] The schema you provided is not a valid Joi schema',
@@ -11,8 +9,18 @@ module.exports = ({ schema, options }) => {
 		throw new Error('The schema is not valid')
 	}
 	return {
-		before(handler, next) {
-			console.log(handler.event)
+		before: (handler, next) => {
+			const event = handler.event
+			const { error: validationFailure } = schema.validate(event, options)
+
+			if (validationFailure) {
+				const error = new createError.BadRequest(
+					'Event object failed validation',
+				)
+				handler.event.headers = Object.assign({}, handler.event.headers)
+				error.details = validationFailure.errors
+				throw error
+			}
 			return next()
 		},
 	}
