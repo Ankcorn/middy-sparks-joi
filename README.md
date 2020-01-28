@@ -42,11 +42,11 @@ module.exports = {
     .use(httpErrorHandler())
     .use(jsonBodyParser())
     .use(validator({
-      schema: ...,
-      options: {}
+      schema
     })
 }
 ```
+
 That's it! Middy Sparks Joi protects you from inputs that don't spark joi ✨
 
 ## Building Joi Schemas
