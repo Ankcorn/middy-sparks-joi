@@ -22,7 +22,7 @@ const schema = Joi.object({
       expiryMonth: Joi.date().required(),
       expiryYear: Joi.date().required(),
       cvc: Joi.number().integer().required(3),
-      nameOnCard: Joi.alphanum().required()
+      nameOnCard: Joi.alphanum().required(),
       amount: Joi.number().required()
     }).required()
 });
