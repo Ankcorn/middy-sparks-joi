@@ -18,7 +18,7 @@ module.exports = ({ schema, options }) => {
 					'Event object failed validation',
 				)
 				handler.event.headers = Object.assign({}, handler.event.headers)
-				error.details = validationFailure.errors
+				error.details = validationFailure.details
 				throw error
 			}
 			return next()
